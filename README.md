@@ -1,12 +1,11 @@
-# COMP47500 – Advanced Data Structures in Java
-# Project No: 5
+# COMP47500 – Project: Develop a scalable and secure web server that supports key functionalities of HTTP1.
 
 ## Group Details
-	Chungman Lee
-	Nithin Shashidhara
-	Hitesh Unnam
-    Simran
-    Tejus Ravi
+	Chungman Lee – 23205535
+	Nithin Shashidhara – 23200183
+	Hitesh Unnam – 23200765
+        Simran – 23206048
+        Tejus Ravi - 23200452
 
  ## How to Run(docker)
  1. Download the Source Code.
