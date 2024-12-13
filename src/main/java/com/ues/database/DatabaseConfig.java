@@ -88,7 +88,7 @@ public class DatabaseConfig {
                 }
 
                 if (dbExists && tableExists) {
-                    return; // init.sql 실행 안 함
+                    return;
                 }
 
                 if (inputStream == null) {
