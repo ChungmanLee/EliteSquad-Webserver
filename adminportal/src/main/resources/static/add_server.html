@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Website</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div class="container" id="test2">
+    <h2>Add New Website</h2>
+    <form id="add-server-form">
+        <div class="form-group">
+            <label for="domain">Domain:</label>
+            <input type="text" id="domain" name="domain" required>
+        </div>
+        <div class="form-group">
+            <label for="ipAddress">IP address:</label>
+            <select id="ipAddress" name="ipAddress" required>
+                <option value="98.71.9.56">98.71.9.56</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="port">Port:</label>
+            <select id="port" name="port" required>
+                <option value="8080">8080</option>
+                <option value="8443">8443</option>
+            </select>
+        </div>
+        <input type="hidden" id="userId" name="userId" value="1">
+        <div class="form-group">
+            <label for="zipFile">Upload Zip File:</label>
+            <input type="file" id="zipFile" name="zipFile" accept=".zip" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Add Website</button>
+        </div>
+    </form>
+</div>
+<script src="../js/main.js"></script>
+<script src="../js/formHandler.js"></script>
+</body>
+</html>

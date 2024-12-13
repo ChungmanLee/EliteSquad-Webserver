@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: WebServerDB
+    ports:
+      - "3307:3306"  # Exposing MySQL container's port 3306 to host's port 3307
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - webnet
+
+  myapp:
+    # image: elitesquadregistry.azurecr.io/elitesquad-webserver-myapp:latest
+    build: .
+    container_name: web-server
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    environment:
+      - SITE1_DOMAIN=site1.local
+      - SITE1_ROOT=/app/WEB_ROOT/site1
+      - SITE2_DOMAIN=site2.local
+      - SITE2_ROOT=/app/WEB_ROOT/site2
+      - DB.URL=jdbc:mysql://mysql:3306/WebServerDB
+      - DB.USERNAME=root
+      - DB.PASSWORD=root
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - webnet
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  webnet:
+    driver: bridge
