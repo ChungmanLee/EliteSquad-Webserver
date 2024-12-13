@@ -4,8 +4,8 @@
 	Chungman Lee – 23205535
 	Nithin Shashidhara – 23200183
 	Hitesh Unnam – 23200765
-        Simran – 23206048
-        Tejus Ravi - 23200452
+	Simran – 23206048
+	Tejus Ravi - 23200452
 
  ## How to Run(docker)
  1. Download the Source Code.
